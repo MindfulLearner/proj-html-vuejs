@@ -1,10 +1,16 @@
-<template>
-  <!-- AppHeaderJumbotron component -->
-</template>
 <script>
-export default {
-  name: 'AppHeaderJumbotron'
-}
+    export default {
+        data() {
+            return {
+
+            }
+        }
+    }
 </script>
+<template>
+    <div class="centered">
+        swag
+    </div>
+</template>
 <style scoped>
 </style>
