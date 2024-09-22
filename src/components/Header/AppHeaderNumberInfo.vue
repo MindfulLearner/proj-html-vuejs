@@ -1,10 +1,15 @@
-<template>
-  <!-- AppHeaderNumberInfo component -->
-</template>
 <script>
-export default {
-  name: 'AppHeaderNumberInfo'
-}
+    export default {
+        data() {
+            return {
+
+            }
+        }
+    }
 </script>
+
+<template>
+</template>
+
 <style scoped>
 </style>
