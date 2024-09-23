@@ -52,8 +52,8 @@
             </div>
         </div>
         <AppHeaderJumbotron />
-        <AppHeaderNumberInfo />
     </div>
+    <AppHeaderNumberInfo />
 </template>
 
 <style scoped>
