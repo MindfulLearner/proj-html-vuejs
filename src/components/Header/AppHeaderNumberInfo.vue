@@ -38,8 +38,7 @@
         width: calc((100% / 4) - 15px);
         padding: 20px;
         text-align: center;
-        border-right: 1px solid rgb(36, 173, 151);
-        rgb(36, 173, 151) border-left: 1px solid rgb(36, 173, 151);
+        border-left: 1px dashed rgb(36, 173, 151);
     }
 
     .number {
