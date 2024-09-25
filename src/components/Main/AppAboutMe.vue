@@ -35,7 +35,10 @@
     </div>
     <div class="container centered">
         <div class="container-video">
-            <img src="/img/home-movation-video-poster-670x450.jpg" alt="">
+            <iframe src="https://www.youtube.com/embed/ElFJ1qcl74U"
+                title="Easily Customize Your Coaching Site With Elementor &amp; MaxCoach" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="container-video-text">
             <div class="text-citazione">
@@ -76,6 +79,11 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
     }
 
     .container-shape-img {
