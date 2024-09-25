@@ -23,6 +23,7 @@
     <AppAboutMe />
     <AppBeginJourney />
     <AppBookStoreOnline />
+
     <AppMainBlog />
 </template>
 
