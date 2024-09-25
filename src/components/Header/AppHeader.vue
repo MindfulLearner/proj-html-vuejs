@@ -11,13 +11,18 @@
                     'fab fa-linkedin'
                 ],
                 listHeader: [
-                    'Home',
-                    'Pages',
-                    'Courses',
-                    'Features',
-                    'Blog',
-                    'Shop',
+                    {name: 'Home', isOpen: false, items: ['MaxCoach Education', 'Course Portal', 'Distant Learning', 'Multimedia Pedagogy', 'Modern Schooling', 'Remote Training', 'Health Coaching', 'Gym Coaching', 'Business', 'Artist', 'Kitchen Coach', 'Motivation', 'Dancing', 'Guitar', 'Yoga', 'Photography', 'Personal Finance', 'Sales Coaching', 'Mental Therapy']},
+                    {name: 'Pages', isOpen: false, items: ['Start Here', 'Success Story', 'About me', 'About us 01', 'About us 02', 'About us 03', 'Contact me', 'Contact us', 'Purchase Guide', 'Privacy Policy', 'Terms of Service']},
+                    {name: 'Courses', isOpen: false, items: ['Courses Grid 01', 'Courses Grid 02', 'Courses Grid 03', 'Membership Levels', 'Become a Teacher', 'Profile', 'Checkout', 'Single Layout']},
+                    {name: 'Features', isOpen: false, items: ['Events', 'Zoom Meetings']},
+                    {name: 'Blog', isOpen: false, items: ['swag']},
+                    {name: 'Shop', isOpen: false, items: ['swag']}
                 ]
+            }
+        },
+        methods: {
+            toggleDropdown(index) {
+                this.listHeader[index].isOpen = !this.listHeader[index].isOpen;
             }
         },
         components: {
@@ -26,18 +31,26 @@
         }
     }
 </script>
+
 <template>
     <div class="bg-img">
         <div class="header-container centered">
             <div class="logo-container">
                 <div class="img-container">
-                    <img src="/img/dark-logo.png" alt="">
+                    <img src="/img/dark-logo.png" alt="logo">
                 </div>
             </div>
             <div class="list-header-container">
-                <div v-for="(a, i) in listHeader">
-                    {{ a }}
-                    <i class="fas fa-chevron-down"></i>
+                <div v-for="(header, index) in listHeader" :key="index" class="menu-item">
+                    <span @click="toggleDropdown(index)">
+                        {{ header.name }}
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                    <div v-if="header.isOpen && header.items.length" class="dropdown-menu">
+                        <ul>
+                            <li v-for="(item, i) in header.items" :key="i">{{ item }}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="ul-container">
@@ -57,6 +70,11 @@
 </template>
 
 <style scoped>
+    .dropdown-menu>ul {
+        display: flex;
+        flex-direction: column;
+    }
+
     img {
         width: 100%;
         height: 100%;
@@ -75,8 +93,14 @@
         height: 100%;
     }
 
+    .menu-item {
+        position: relative;
+    }
+
     .list-header-container>div {
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .header-container {
@@ -86,14 +110,12 @@
         justify-content: space-between;
     }
 
-    .hamburger {}
-
     .ul-container {
         width: 25%;
     }
 
     ul {
-        listIcon-style-type: none;
+        list-style-type: none;
         gap: 10px;
         display: flex;
         justify-content: end;
@@ -121,5 +143,28 @@
         background-position: center;
         min-height: 500px;
         background-color: rgb(239, 239, 246);
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-menu li {
+        padding: 5px 10px;
+        white-space: nowrap;
     }
 </style>

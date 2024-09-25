@@ -23,7 +23,7 @@
 <style scoped>
     .card {
         padding: 10px;
-        width: calc((100% / 4) - 15px);
+        width: calc((100% / 3) - 15px);
         margin-bottom: 20px;
     }
 
