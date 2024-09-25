@@ -1,10 +1,13 @@
-<template>
-  <!-- AppFooter component -->
-</template>
 <script>
-export default {
-  name: 'AppFooter'
-}
+    export default {
+        data() {
+            return {
+
+            }
+        }
+    }
 </script>
+<template>
+</template>
 <style scoped>
 </style>

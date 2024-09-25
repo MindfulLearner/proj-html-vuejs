@@ -120,5 +120,6 @@
         background-image: url('/img/background-pattern-wavify.png');
         background-position: center;
         min-height: 500px;
+        background-color: rgb(239, 239, 246);
     }
 </style>
